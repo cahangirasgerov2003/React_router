@@ -5,7 +5,7 @@ import { NavLink, Outlet } from "react-router-dom";
 const MainLayout = () => {
   return (
     <div className="main-layout">
-      <header>
+      <header className="container">
         <h1>React Router</h1>
         <nav>
           <NavLink to="" className="me-3">
@@ -15,7 +15,7 @@ const MainLayout = () => {
           <NavLink to="help">Help</NavLink>
         </nav>
       </header>
-      <main>
+      <main className="container">
         <Outlet />
       </main>
     </div>
