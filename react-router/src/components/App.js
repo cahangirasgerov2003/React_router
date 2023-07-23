@@ -1,8 +1,3 @@
-// / -> <Home />
-// /home -> <Home />
-// /about -> <About />
-// /products -> <Products />
-
 import React from "react";
 
 // Import Pages
@@ -12,10 +7,13 @@ import About from "../pages/About";
 // Import Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import { HelpLayout } from "../layouts/HelpLayout";
+import Faq from "../pages/helps/Faq";
+import Contact from "../pages/helps/Contact";
 
 const router = createBrowserRouter([
   {
-    path: "/client",
+    path: "/",
     element: <MainLayout />,
     children: [
       {
@@ -29,6 +27,20 @@ const router = createBrowserRouter([
       {
         path: "about",
         element: <About />,
+      },
+      {
+        path: "help",
+        element: <HelpLayout />,
+        children: [
+          {
+            path: "contact",
+            element: <Contact />,
+          },
+          {
+            path: "faq",
+            element: <Faq />,
+          },
+        ],
       },
     ],
   },
