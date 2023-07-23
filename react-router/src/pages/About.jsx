@@ -1,6 +1,16 @@
+import { NavLink } from "react-router-dom";
+
 function About() {
     return (
       <div className="about">
+        <nav>
+            <NavLink to="/" className="me-3">
+                Home
+            </NavLink>
+            <NavLink to="/about">
+                About
+            </NavLink>
+        </nav>
         <h2>Info us !</h2>
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perspiciatis
