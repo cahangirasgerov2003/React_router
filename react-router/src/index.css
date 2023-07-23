@@ -128,3 +128,19 @@ form button {
 form button:hover {
   transform: scale(0.98, 0.98);
 }
+
+/* Users page */
+.users .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin: 10px 0 20px 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 1px 0.5px 10px red;
+  border-radius: 10px;
+}
+
+.card h3 i {
+  margin-right: 10px;
+}
