@@ -11,6 +11,7 @@ import { HelpLayout } from "../layouts/HelpLayout";
 import Faq from "../pages/helps/Faq";
 import Contact from "../pages/helps/Contact";
 import { Users, usersLoading } from "../pages/Users";
+import { UsersDetails, usersDetailsLoader } from "../pages/UsersDetails";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,12 @@ const router = createBrowserRouter([
         path: "users",
         element: <Users />,
         loader: usersLoading,
+      },
+
+      {
+        path: "users/:userID",
+        element: <UsersDetails />,
+        loader: usersDetailsLoader,
       },
     ],
   },
