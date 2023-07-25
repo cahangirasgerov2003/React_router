@@ -11,28 +11,32 @@
 // }
 
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 export const UsersDetails = () => {
-
   const userData = useLoaderData();
 
   return (
-    <>
-      <div className="loaderData">
-        <h2>
-          { userData.name }
-        </h2>
-         <h3>
-         { userData.username }
-         </h3>
-      </div>
-    </>
+    <div className="userDetails">
+      <h3>
+        <i className="fa-solid fa-caret-right"></i>
+        {userData.name}
+      </h3>
+        <ul>
+          <li>Username : {userData.username}</li>
+          <li>Email : {userData.email}</li>
+          <li>Phone number : {userData.phone}</li>
+          <li>Company name : {userData.company.name}</li>
+          <li>Address City : {userData.address.city}</li>
+        </ul>
+        <Link to={"/users"}>Back <i className="fa-solid fa-backward"></i></Link>
+    </div>
   );
 };
 
-export const usersDetailsLoader = async ( data ) => {
-  const result = await (fetch("https://jsonplaceholder.typicode.com/users/" + data.params.userID));
+export const usersDetailsLoader = async (data) => {
+  const result = await fetch(
+    "https://jsonplaceholder.typicode.com/users/" + data.params.userID
+  );
   return result.json();
-}
-
+};
