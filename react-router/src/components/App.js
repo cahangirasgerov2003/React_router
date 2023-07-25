@@ -16,6 +16,7 @@ import {
   UsersDetails,
   usersDetailsLoader,
 } from "../pages/usersInfo/UsersDetails";
+import { NotFound } from "../pages/NotFound";
 
 const router = createBrowserRouter([
   {
@@ -65,6 +66,11 @@ const router = createBrowserRouter([
             loader: usersDetailsLoader,
           },
         ],
+      },
+
+      {
+        path: "*",
+        element: <NotFound />,
       },
     ],
   },

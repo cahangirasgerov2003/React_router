@@ -94,6 +94,14 @@ main {
   margin-top: 20px;
 }
 
+.contact form div {
+  margin-bottom: 30px;
+}
+
+.contact form div small {
+  color: rgb(224, 50, 50);
+}
+
 form input,
 form textarea,
 form label {
@@ -108,7 +116,7 @@ form input,
 form textarea {
   width: 300px;
   padding: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
   border: none;
   border-radius: 5px;
   font-size: 19px;
@@ -169,4 +177,15 @@ form button:hover {
 
 .usersLayout h2 {
   margin-bottom: 10px;
+}
+
+/* Not found */
+
+.notFound {
+  display: flex;
+  justify-content: center;
+}
+.notFound p {
+  color: var(--secondary);
+  font-size: 24px;
 }
