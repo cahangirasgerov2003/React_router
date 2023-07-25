@@ -25,5 +25,10 @@ export const Users = () => {
 
 export const usersLoading = async () => {
    const res = await fetch("https://jsonplaceholder.typicode.com/users");
+
+   if(res.status === 404){
+     throw new Error("An error occurred on the server !");
+   }
+
    return res.json();
 }

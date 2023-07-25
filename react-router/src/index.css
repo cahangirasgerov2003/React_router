@@ -185,7 +185,21 @@ form button:hover {
   display: flex;
   justify-content: center;
 }
-.notFound p {
+.notFound p,
+.globalError p,
+.usersError p {
   color: var(--secondary);
   font-size: 24px;
 }
+
+/* UsersError page */
+/* .usersError p {
+  color: var(--secondary);
+  font-size: 24px;
+} */
+
+/* GlobalError page */
+/* .globalError p {
+  color: var(--secondary);
+  font-size: 24px;
+} */

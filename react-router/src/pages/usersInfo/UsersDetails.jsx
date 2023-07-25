@@ -34,9 +34,16 @@ export const UsersDetails = () => {
   );
 };
 
-export const usersDetailsLoader = async (data) => {
+
+
+export const usersDetailsLoader = async ({params}) => {
   const result = await fetch(
-    "https://jsonplaceholder.typicode.com/users/" + data.params.userID
+    "https://jsonplaceholder.typicode.com/users/" + params.userID
   );
+
+  if(result.status === 404){
+    throw new Error("No search results found !");
+  }
+
   return result.json();
 };

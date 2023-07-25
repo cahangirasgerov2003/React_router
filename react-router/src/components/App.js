@@ -17,11 +17,14 @@ import {
   usersDetailsLoader,
 } from "../pages/usersInfo/UsersDetails";
 import { NotFound } from "../pages/NotFound";
+import { UsersError } from "../pages/UsersError";
+import { GlobalError } from "../pages/GlobalError";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement: <GlobalError />,
     children: [
       {
         index: true,
@@ -54,6 +57,7 @@ const router = createBrowserRouter([
       {
         path: "users",
         element: <UsersLayout />,
+        errorElement: <UsersError />,
         children: [
           {
             index: true,
