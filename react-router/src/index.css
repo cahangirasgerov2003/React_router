@@ -203,3 +203,9 @@ form button:hover {
   color: var(--secondary);
   font-size: 24px;
 } */
+
+/* Loading.js */
+.loadingIcon {
+  display: flex;
+  justify-content: center;
+}
