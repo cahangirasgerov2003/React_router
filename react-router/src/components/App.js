@@ -10,9 +10,12 @@ import MainLayout from "../layouts/MainLayout";
 import { HelpLayout } from "../layouts/HelpLayout";
 import { UsersLayout } from "../layouts/UsersLayout";
 import Faq from "../pages/helps/Faq";
-import Contact from "../pages/helps/Contact";
-import { Users, usersLoading } from "../pages/Users";
-import { UsersDetails, usersDetailsLoader } from "../pages/UsersDetails";
+import Contact, { contactAction } from "../pages/helps/Contact";
+import { Users, usersLoading } from "../pages/usersInfo/Users";
+import {
+  UsersDetails,
+  usersDetailsLoader,
+} from "../pages/usersInfo/UsersDetails";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +41,7 @@ const router = createBrowserRouter([
           {
             path: "contact",
             element: <Contact />,
+            action: contactAction,
           },
           {
             path: "faq",

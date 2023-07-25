@@ -1,21 +1,33 @@
+import { Form, redirect } from "react-router-dom";
+
 function Home() {
     return (
         <div className="contact">
             <h2>Contact us !</h2>
-            <form>
+            <Form method="post" action="/help/contact">
                 <div>
                    <label htmlFor="email">Email:</label>
-                   <input type="email" id="email" />
+                   <input type="email" name="email" />
                 </div>
                 <div>
                    <label htmlFor="message">Message:</label>
-                   <textarea id="message"></textarea>
+                   <textarea name="message"></textarea>
                 </div>
 
-                <button type="button">Send</button>
-            </form>
+                <button type="submit">Submit</button>
+            </Form>
         </div>
     );
 }
 
 export default Home;
+
+// Bu server hissesine getmir tarayicida saxlanilir :
+
+export const contactAction = async ( { request } ) => {
+   const result = await request.formData();
+   console.log(result.get("email"));
+   console.log(result.get("message"));
+
+   return redirect("/");
+}
